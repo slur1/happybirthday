@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="birthday-cake">
+    <div class="cake">
+      <div class="middle"></div>
+      <div class="chocs"></div>
+      <div class="top"></div>
+    </div>
+    <div class="candles">
+      <div class="flame" onclick="blowCandle(this)"></div>
+      <div class="flame2" onclick="blowCandle(this)"></div>
+      <div class="flame3" onclick="blowCandle(this)"></div>
+      <div class="text" id="birthdayText">Happy Birthday, My Love!</div>
+        <div class="modal" id="modal">
+          <div class="modal-inner">
+            <h2>Hello, Love ko!</h2>
+            <p>Happy Birthday! Today is your special day, and I just want to remind you how truly amazing you are. You’ve touched
+            the lives of the people around you, including mine, in ways that words can’t fully express. On your birthday, I hope you
+            feel all the love, joy, and appreciation that you deserve.
+            <br>
+            <br>
+            
+            As of now, hindi pa kita mabibilhan ng totoong cake, kaya ito muna ang simpleng cake ko para sayo. I’m super
+            thankful na dumating ka sa buhay ko at nabigyan ako ng chance to spend a lifetime with you. Thank you, love, for all the
+            effort and love you always give. You truly mean the world to me.
+            <br>
+            <br>
+            
+            Enjoy this day to the fullest—surround yourself with people who make you laugh, moments that make your heart full, and
+            memories that you will cherish forever. Sana sa bawat ngiti mo ngayong araw, maramdaman mo kung gaano ka kahalaga sa akin
+            at kung gaano kita kamahal. 
+            <br>
+            <br>
+            
+            Once again, happy birthday! May this year be your best one yet. I love you! 💖
+            </p>
+            <img src="shooky1.png" alt="shooky-from-bts">
+            <p class="p2">nagmamahal,
+              <br>
+              Je
+            </p>
+            <button id="closeModal">Close</button>
+          </div>
+        </div>
+      <div class="shadows"></div>
+    </div>
+    
+    <p class="text2">*click the flame to blow candles</p>
+      
+      <div class="gift-btn-container">
+        <button id="openModal" class="gift-btn">🎁 Claim your gift</button>
+      </div>
+  </div>
+
+
+<script>
+  const flames = document.querySelectorAll('.flame, .flame2, .flame3');
+  const text = document.querySelector('.text');
+
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.getElementById("closeModal");
+  const modal = document.getElementById("modal");
+
+ 
+  flames.forEach(flame => {
+    flame.addEventListener('click', () => {
+      flames.forEach(f => f.style.display = "none"); 
+      text.classList.add('show'); 
+    });
+  });
+
+  
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("open");
+  });
+
+ 
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("open");
+  });
+
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+  </script>
+  
+</body>
+</html>
